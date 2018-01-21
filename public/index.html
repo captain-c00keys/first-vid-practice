@@ -8,5 +8,16 @@
         <p>
             <!-- we will fill this with data from our api -->
         </p>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+        <script>
+            $.ajax({
+                url: '/api/codefellows', 
+                method: 'GET',
+                success: function(data, message) {
+                    console.log('response from API:', data);
+                    $('p').text(data.company);
+                }
+            });
+        </script>
     </body>
 </html>
